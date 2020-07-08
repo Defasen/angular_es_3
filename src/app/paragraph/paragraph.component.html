@@ -1,0 +1,12 @@
+<button (click)="displayParagraph()">
+    Display Details
+</button>
+<p *ngIf="seeParagraph; else NoSecret">paragraph works!</p>
+<ng-template #NoSecret><p style="color: white;">Ciao</p></ng-template>
+<br>
+<div
+    *ngFor="let lap of laps"
+    [ngStyle]="{backgroundColor: lap >= 5 ? 'teal' : 'trasparent'}"
+    [ngClass]="{white: lap >= 5}">
+        We are at lap n° {{ lap }}
+</div>
